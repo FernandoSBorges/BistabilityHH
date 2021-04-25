@@ -1,0 +1,17 @@
+{
+    "include": [
+        "PYR"
+    ],
+    "saveData": "../data/v0_batch0/v0_batch0_2_sync.json",
+    "saveFig": false,
+    "showFig": true,
+    "statData": [
+        [
+            0.5792365284033163
+        ]
+    ],
+    "timeRange": [
+        0,
+        2000.0
+    ]
+}

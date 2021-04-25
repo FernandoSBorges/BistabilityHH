@@ -1,0 +1,172 @@
+{
+    "simConfig": {
+        "EEGain": 2,
+        "IClamp1": 0.0001,
+        "addConn": 1,
+        "addSynMechs": true,
+        "allowConnsWithWeight0": true,
+        "allowSelfConns": false,
+        "allpops": [
+            "PYR"
+        ],
+        "analysis": {
+            "plotRaster": {
+                "dpi": 300,
+                "figSize": [
+                    18,
+                    10
+                ],
+                "fontSize": 9,
+                "include": [
+                    "PYR"
+                ],
+                "labels": "legend",
+                "lw": 2,
+                "marker": ".",
+                "markerSize": 4,
+                "orderInverse": true,
+                "popRates": true,
+                "saveFig": true,
+                "showFig": false,
+                "timeRange": [
+                    0,
+                    2000.0
+                ]
+            },
+            "plotTraces": {
+                "figSize": [
+                    18,
+                    10
+                ],
+                "include": [
+                    [
+                        "PYR",
+                        0
+                    ],
+                    [
+                        "PYR",
+                        40
+                    ],
+                    [
+                        "PYR",
+                        80
+                    ],
+                    [
+                        "PYR",
+                        120
+                    ],
+                    [
+                        "PYR",
+                        160
+                    ]
+                ],
+                "oneFigPer": "trace",
+                "overlay": false,
+                "saveFig": true,
+                "showFig": false,
+                "timeRange": [
+                    0,
+                    2000.0
+                ],
+                "ylim": [
+                    -100,
+                    40
+                ]
+            }
+        },
+        "backupCfgFile": null,
+        "cache_efficient": false,
+        "cellNumber": 200,
+        "cellsrec": 2,
+        "checkErrors": false,
+        "checkErrorsVerbose": false,
+        "compactConnFormat": false,
+        "connRandomSecFromList": true,
+        "createNEURONObj": true,
+        "createPyStruct": true,
+        "cvode_active": false,
+        "cvode_atol": 0.001,
+        "distributeSynsUniformly": true,
+        "dt": 0.025,
+        "duration": 2000.0,
+        "filename": "model_output",
+        "gatherOnlySimData": false,
+        "hParams": {
+            "v_init": -71.0
+        },
+        "includeParamsLabel": true,
+        "invertedYCoord": true,
+        "oneSynPerNetcon": true,
+        "popNumber": 1,
+        "printPopAvgRates": true,
+        "printRunTime": 0.1,
+        "printSynsAfterRule": false,
+        "pt3dRelativeToCellLocation": true,
+        "rand123GlobalIndex": null,
+        "recordCells": [
+            [
+                "PYR",
+                0
+            ],
+            [
+                "PYR",
+                40
+            ],
+            [
+                "PYR",
+                80
+            ],
+            [
+                "PYR",
+                120
+            ],
+            [
+                "PYR",
+                160
+            ]
+        ],
+        "recordCellsSpikes": -1,
+        "recordDipoles": false,
+        "recordLFP": [],
+        "recordStep": 0.1,
+        "recordStim": true,
+        "recordTime": false,
+        "recordTraces": {
+            "Vsoma": {
+                "loc": 0.5,
+                "sec": "soma",
+                "var": "v"
+            }
+        },
+        "saveCSV": false,
+        "saveCellConns": true,
+        "saveCellSecs": false,
+        "saveDat": false,
+        "saveDataInclude": [
+            "simData"
+        ],
+        "saveDpk": false,
+        "saveFolder": "../data/v0_batch0",
+        "saveHDF5": false,
+        "saveJson": true,
+        "saveLFPCells": false,
+        "saveMat": false,
+        "savePickle": false,
+        "saveTiming": false,
+        "scale": 1.0,
+        "seeds": {
+            "conn": 1,
+            "loc": 1,
+            "stim": 1
+        },
+        "simLabel": "v0_batch0_2",
+        "sizeX": 100.0,
+        "sizeY": 100.0,
+        "sizeZ": 100.0,
+        "timestampFilename": false,
+        "timing": true,
+        "tstop": 1000.0,
+        "use_fast_imem": false,
+        "verbose": false
+    }
+}
