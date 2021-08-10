@@ -43,7 +43,6 @@ cfg.cellNumber = 200
 #------------------------------------------------------------------------------
 cfg.cellsrec = 2
 printNumber = 5
-
 if cfg.cellsrec == 0:  cfg.recordCells = cfg.allpops # record all cells
 elif cfg.cellsrec == 1: cfg.recordCells = [(pop,0) for pop in cfg.allpops] # record one cell of each pop
 elif cfg.cellsrec == 2: # record 'printNumber' cells of each pop
@@ -104,4 +103,4 @@ cfg.EEGain = 1.0
 #------------------------------------------------------------------------------
 # Current inputs 
 #------------------------------------------------------------------------------
-cfg.IClamp1 = 0.0001 # amp  in uA or nA ?
+cfg.IClamp1 = 0.001 # amp  in uA or nA ?

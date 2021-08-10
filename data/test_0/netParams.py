@@ -52,30 +52,31 @@ netParams.popParams['PYR'] = {'cellType': 'PYR', 'numCells': cfg.cellNumber} # a
 ## PYR cell properties
 PYRcell = {'secs': {}} # cell rule dict
 PYRcell['secs']['soma'] = {'geom': {}, 'mechs': {}} # soma params dict
-PYRcell['secs']['soma']['geom'] = {'diam': 18.8, 'L': 18.8, 'Ra': 123.0} # soma geometry
-PYRcell['secs']['soma']['mechs']['hh'] = {'gnabar': 0.12, 'gkbar': 0.036, 'gl': 0.003, 'el': -70} # soma hh mechanism
+PYRcell['secs']['soma']['geom'] = {'diam': 96.0, 'L': 96.0, 'Ra': 100.0} # soma geometry
+PYRcell['secs']['soma']['mechs']['hh'] = {'gnabar': 0.0, 'gkbar': 0.0, 'gl': 0.00001, 'el': -85} # soma hh mechanism
+PYRcell['secs']['soma']['mechs']['hh2'] = {'gnabar': 0.05, 'gkbar': 0.005, 'vtraub':-55} # soma hh mechanism
+PYRcell['secs']['soma']['mechs']['im'] = {'gkbar': 0.00003, 'taumax': 1000.0} # M current - specific to LTS pyr cell
+PYRcell['secs']['soma']['mechs']['cad'] = {'depth': 1, 'taur': = 5, 'cainf':2.4e-4, 'kt': 0} #calcium decay - no pump
+PYRcell['secs']['soma']['mechs']['ical'] = {'gcabar': 2.2e-4} #IL current (Reuveni et al. model, Nernst)
+PYRcell['secs']['soma']['mechs']['it'] = {'gcabar':0.0004} #IT current - specific to LTS pyr cell
 PYRcell['secs']['soma']['vinit'] = -71 # set initial membrane potential
 netParams.cellParams['PYR'] = PYRcell # add dict to list of cell params
-
 
 #------------------------------------------------------------------------------
 # Network parameters  
 #------------------------------------------------------------------------------
 # Synaptic mechanism parameters
-# netParams.synMechParams['GABAA']={'mod':'MyExp2Syn', 'tau1':1.0, 'tau2':8.0, 'e':-75.0}
-# netParams.synMechParams['AMPA']={'mod':'MyExp2Syn', 'tau1':0.5, 'tau2':3.0, 'e':0.0}
-
-# Synaptic mechanism parameters
-netParams.synMechParams['AMPA'] = {'mod': 'Exp2Syn', 'tau1': 0.1, 'tau2': 1.0, 'e': 0}
+netParams.synMechParams['AMPA'] = {'mod': 'Exp2Syn', 'tau1': 0.1, 'tau2': 5.0, 'e': 0}
 
 # Connectivity parameters
 netParams.connParams['PYR->PYR'] = {
     'preConds': {'pop': 'PYR'}, 'postConds': {'pop': 'PYR'},
-    'weight': cfg.EEGain*0.002,                    # weight of each connection
+    'weight': cfg.EEGain*0.001,                    # weight of each connection
     'probability': 0.1,
     'synMech': 'AMPA',
     'synsPerConn': int(1.0),
-    'delay': 'defaultDelay+dist_3D/propVelocity'}
+    # 'delay': 'defaultDelay+dist_3D/propVelocity'
+    'delay': 0.1}
 
 
 #------------------------------------------------------------------------------

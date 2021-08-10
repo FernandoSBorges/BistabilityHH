@@ -1,0 +1,169 @@
+numprocs=8
+
+Reading command line arguments using syntax: python file.py [simConfig=filepath] [netParams=filepath]
+Loading file ../data/v0_batch0/v0_batch0_0_cfg.json ... 
+Loading simConfig...
+{'SO_BS': 1.0, 'SO_BP': 1.0, 'SO_Tri': 2.0, 'SO_OLM': 3.0, 'SP_CCKBC': 6.0, 'SP_PVBC': 8.0, 'SP_BS': 3.0, 'SP_PC': 430.0, 'SP_AA': 3.0, 'SP_Ivy': 13.0, 'SR_SCA': 1.0, 'SLM_PPA': 1.0}
+
+Reading command line arguments using syntax: python file.py [simConfig=filepath] [netParams=filepath]
+Loading file ../data/v0_batch0/v0_batch0_0_cfg.json ... 
+Loading simConfig...
+
+Reading command line arguments using syntax: python file.py [simConfig=filepath] [netParams=filepath]
+Loading file ../data/v0_batch0/v0_batch0_0_cfg.json ... 
+Loading simConfig...
+
+Reading command line arguments using syntax: python file.py [simConfig=filepath] [netParams=filepath]
+Loading file ../data/v0_batch0/v0_batch0_0_cfg.json ... 
+Loading simConfig...
+{'SO_BS': 1.0, 'SO_BP': 1.0, 'SO_Tri': 2.0, 'SO_OLM': 3.0, 'SP_CCKBC': 6.0, 'SP_PVBC': 8.0, 'SP_BS': 3.0, 'SP_PC': 430.0, 'SP_AA': 3.0, 'SP_Ivy': 13.0, 'SR_SCA': 1.0, 'SLM_PPA': 1.0}
+{'SO_BS': 1.0, 'SO_BP': 1.0, 'SO_Tri': 2.0, 'SO_OLM': 3.0, 'SP_CCKBC': 6.0, 'SP_PVBC': 8.0, 'SP_BS': 3.0, 'SP_PC': 430.0, 'SP_AA': 3.0, 'SP_Ivy': 13.0, 'SR_SCA': 1.0, 'SLM_PPA': 1.0}
+
+Reading command line arguments using syntax: python file.py [simConfig=filepath] [netParams=filepath]
+Loading file ../data/v0_batch0/v0_batch0_0_cfg.json ... 
+Loading simConfig...
+{'SO_BS': 1.0, 'SO_BP': 1.0, 'SO_Tri': 2.0, 'SO_OLM': 3.0, 'SP_CCKBC': 6.0, 'SP_PVBC': 8.0, 'SP_BS': 3.0, 'SP_PC': 430.0, 'SP_AA': 3.0, 'SP_Ivy': 13.0, 'SR_SCA': 1.0, 'SLM_PPA': 1.0}
+
+Reading command line arguments using syntax: python file.py [simConfig=filepath] [netParams=filepath]
+Loading file ../data/v0_batch0/v0_batch0_0_cfg.json ... 
+Loading simConfig...
+
+Reading command line arguments using syntax: python file.py [simConfig=filepath] [netParams=filepath]
+Loading file ../data/v0_batch0/v0_batch0_0_cfg.json ... 
+Loading simConfig...
+{'SO_BS': 1.0, 'SO_BP': 1.0, 'SO_Tri': 2.0, 'SO_OLM': 3.0, 'SP_CCKBC': 6.0, 'SP_PVBC': 8.0, 'SP_BS': 3.0, 'SP_PC': 430.0, 'SP_AA': 3.0, 'SP_Ivy': 13.0, 'SR_SCA': 1.0, 'SLM_PPA': 1.0}
+{'SO_BS': 1.0, 'SO_BP': 1.0, 'SO_Tri': 2.0, 'SO_OLM': 3.0, 'SP_CCKBC': 6.0, 'SP_PVBC': 8.0, 'SP_BS': 3.0, 'SP_PC': 430.0, 'SP_AA': 3.0, 'SP_Ivy': 13.0, 'SR_SCA': 1.0, 'SLM_PPA': 1.0}
+{'SO_BS': 1.0, 'SO_BP': 1.0, 'SO_Tri': 2.0, 'SO_OLM': 3.0, 'SP_CCKBC': 6.0, 'SP_PVBC': 8.0, 'SP_BS': 3.0, 'SP_PC': 430.0, 'SP_AA': 3.0, 'SP_Ivy': 13.0, 'SR_SCA': 1.0, 'SLM_PPA': 1.0}
+
+Reading command line arguments using syntax: python file.py [simConfig=filepath] [netParams=filepath]
+Loading file ../data/v0_batch0/v0_batch0_0_cfg.json ... 
+Loading simConfig...
+{'SO_BS': 1.0, 'SO_BP': 1.0, 'SO_Tri': 2.0, 'SO_OLM': 3.0, 'SP_CCKBC': 6.0, 'SP_PVBC': 8.0, 'SP_BS': 3.0, 'SP_PC': 430.0, 'SP_AA': 3.0, 'SP_Ivy': 13.0, 'SR_SCA': 1.0, 'SLM_PPA': 1.0}
+Importing netParams from ../data/v0_batch0/v0_batch0_netParams.py
+Importing netParams from ../data/v0_batch0/v0_batch0_netParams.py
+Importing netParams from ../data/v0_batch0/v0_batch0_netParams.py
+Importing netParams from ../data/v0_batch0/v0_batch0_netParams.py
+Importing netParams from ../data/v0_batch0/v0_batch0_netParams.py
+Importing netParams from ../data/v0_batch0/v0_batch0_netParams.py
+Importing netParams from ../data/v0_batch0/v0_batch0_netParams.py
+Importing netParams from ../data/v0_batch0/v0_batch0_netParams.py
+
+Start time:  2021-04-26 01:34:15.135577
+
+Creating network of 7 cell populations on 8 hosts...
+  Number of cells on node 4: 73 
+  Number of cells on node 1: 73 
+  Number of cells on node 2: 73 
+  Number of cells on node 7: 72 
+  Number of cells on node 3: 73 
+  Number of cells on node 0: 73 
+  Done; cell creation time = 0.55 s.
+  Number of cells on node 6: 73 
+  Number of cells on node 5: 73 
+Making connections...
+  Number of connections on node 7: 2335 
+  Number of synaptic contacts on node 7: 19769 
+  Number of connections on node 6: 2288 
+  Number of synaptic contacts on node 6: 19688 
+  Number of connections on node 4: 2756 
+  Number of synaptic contacts on node 4: 20624 
+  Number of connections on node 0: 2787 
+  Number of synaptic contacts on node 0: 20673 
+  Number of connections on node 3: 2750 
+  Number of synaptic contacts on node 3: 20612 
+  Number of connections on node 2: 3180 
+  Number of synaptic contacts on node 2: 21175 
+  Number of connections on node 5: 2748 
+  Number of synaptic contacts on node 5: 20608 
+  Number of connections on node 1: 3183 
+  Number of synaptic contacts on node 1: 21181 
+  Done; cell connection time = 1.93 s.
+  Number of stims on node 2: 0 
+  Number of stims on node 7: 0 
+  Number of stims on node 0: 0 
+  Number of stims on node 3: 0 
+  Number of stims on node 6: 0 
+  Number of stims on node 1: 0 
+  Number of stims on node 5: 0 
+  Number of stims on node 4: 0 
+  Done; cell stims creation time = 0.00 s.
+Recording 73 traces of 1 types on node 2
+Recording 76 traces of 2 types on node 5
+Recording 73 traces of 2 types on node 7
+Recording 75 traces of 2 types on node 0
+Recording 73 traces of 1 types on node 6
+Recording 74 traces of 2 types on node 3
+Recording 74 traces of 2 types on node 1
+Recording 73 traces of 1 types on node 4
+0.0s
+
+Running simulation for 1000.0 ms...
+0.1s
+0.2s
+0.3s
+0.4s
+0.5s
+0.6s
+0.7s
+0.8s
+0.9s
+1.0s
+  Done; run time = 334.42 s; real-time ratio: 0.00.
+
+Gathering data...
+  Done; gather time = 2.41 s.
+
+Analyzing...
+Plotting raster...
+  There was an exception in plotRaster(): 
+    'Network' object has no attribute 'allCells' 
+    (<class 'AttributeError'>, AttributeError("'Network' object has no attribute 'allCells'"), <traceback object at 0x7f96c4083370>)
+Plotting raster...
+  There was an exception in plotRaster(): 
+    'Network' object has no attribute 'allCells' 
+    (<class 'AttributeError'>, AttributeError("'Network' object has no attribute 'allCells'"), <traceback object at 0x7f0ea77bb410>)
+Plotting raster...
+  There was an exception in plotRaster(): 
+    'Network' object has no attribute 'allCells' 
+    (<class 'AttributeError'>, AttributeError("'Network' object has no attribute 'allCells'"), <traceback object at 0x7f2a318a1370>)
+Plotting raster...
+  There was an exception in plotRaster(): 
+    'Network' object has no attribute 'allCells' 
+    (<class 'AttributeError'>, AttributeError("'Network' object has no attribute 'allCells'"), <traceback object at 0x7f0a2209b370>)
+Plotting raster...
+  There was an exception in plotRaster(): 
+    'Network' object has no attribute 'allCells' 
+    (<class 'AttributeError'>, AttributeError("'Network' object has no attribute 'allCells'"), <traceback object at 0x7ff5d5eea2d0>)
+Plotting raster...
+  There was an exception in plotRaster(): 
+    'Network' object has no attribute 'allCells' 
+    (<class 'AttributeError'>, AttributeError("'Network' object has no attribute 'allCells'"), <traceback object at 0x7f85fbb832d0>)
+Plotting raster...
+  There was an exception in plotRaster(): 
+    'Network' object has no attribute 'allCells' 
+    (<class 'AttributeError'>, AttributeError("'Network' object has no attribute 'allCells'"), <traceback object at 0x7fc8c858c2d0>)
+  Cells: 583
+  Connections: 22027 (37.78 per cell)
+  Synaptic contacts: 164330 (281.87 per cell)
+  Spikes: 5465 (9.37 Hz)
+  Simulated time: 1.0 s; 8 workers
+  Run time: 334.42 s
+   OLM : 11.000 Hz
+   Pyramidal : 0.002 Hz
+   BS : 0.000 Hz
+   Basket : 34.000 Hz
+   AA : 30.667 Hz
+   EC : 40.256 Hz
+   CA3 : 40.372 Hz
+Saving output as ../data/v0_batch0/v0_batch0_0.json  ... 
+Finished saving!
+  Done; saving time = 0.26 s.
+Plotting 2D representation of network cell locations and connections...
+Plotting raster...
+Plotting recorded cell traces ... trace
+  Done; plotting time = 132.59 s
+
+Total time = 472.30 s
+
+End time:  2021-04-26 01:42:07.431081
+Plotting raster...
