@@ -1,1 +1,0 @@
-../mod//regn_stim.mod

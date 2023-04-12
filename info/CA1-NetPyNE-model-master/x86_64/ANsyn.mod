@@ -1,1 +1,0 @@
-../mod//ANsyn.mod

@@ -1,17 +1,18 @@
 """
 cfg.py 
 
-Simulation configuration for S1 model (using NetPyNE)
+Simulation configuration for ...
 This file has sim configs as well as specification for parameterized values in netParams.py 
 
-Contributors: salvadordura@gmail.com, fernandodasilvaborges@gmail.com
+Contributors: conrad.bittencourt@gmail.com, fernandodasilvaborges@gmail.com
 """
 
-from netpyne import specs
-import pickle
-import os
 
-cfg = specs.SimConfig()     # object of class SimConfig to store the simulation configuration
+import os
+from matplotlib import pyplot as plt
+from netpyne import specs
+
+cfg = specs.SimConfig()     
 
 #------------------------------------------------------------------------------
 #
@@ -19,88 +20,77 @@ cfg = specs.SimConfig()     # object of class SimConfig to store the simulation 
 #
 #------------------------------------------------------------------------------
 
+cfg.coreneuron = False
+
+rootFolder = os.getcwd()
+
 #------------------------------------------------------------------------------
 # Run parameters
 #------------------------------------------------------------------------------
-cfg.duration = 2*1e3 # Duration of the simulation, in ms
-cfg.dt = 0.025 # Internal integration timestep to use
-cfg.seeds = {'conn': 1, 'stim': 1, 'loc': 1} # Seeds for randomizers (connectivity, input stimulation and cell locations)
-cfg.verbose = False  # show detailed messages
-# cfg.hParams = {'celsius': 36, 'v_init': -71.0}
-cfg.hParams = {'v_init': -71.0}
-cfg.printRunTime = 0.1
+
+cfg.duration = 2000.0 ## Duration of the sim, in ms  
+cfg.dt = 0.01
+# ~ cfg.seeds = {'conn': 4321, 'stim': 1234, 'loc': 4321} 
+cfg.hParams = {'celsius': 34, 'v_init': -65}  
+cfg.verbose = False
+cfg.createNEURONObj = True
+cfg.createPyStruct = True
+cfg.cvode_active = False
+cfg.cvode_atol = 1e-6
+cfg.cache_efficient = True
+cfg.printRunTime = 0.5
+
+cfg.includeParamsLabel = False
 cfg.printPopAvgRates = True
+cfg.checkErrors = False
+
+cfg.allpops = []
+cfg.allcells = ['sPY']#, 'sIN']#, 'sPYbr', 'sPYb', 'sPYr', 'sPY']
+
+for cell in cfg.allcells:
+    cfg.allpops.append(f'pop_{cell}')
 
 #------------------------------------------------------------------------------
-# Cells
+# Analysis and plotting 
 #------------------------------------------------------------------------------
-cfg.popNumber = 1 
-cfg.allpops = ['PYR']
-cfg.cellNumber = 10
+cfg.analysis['plotTraces'] = {'include': cfg.allpops, 'saveFig': True, 'showFig': False, 'oneFigPer':'trace', 'axis': False, 'subtitles':False, 'legend':False, 'overlay':False, 'figSize':(36, 24), 'fontSize':2}
+cfg.analysis['plot2Dnet']   = {'include': cfg.allpops, 'saveFig': True, 'showFig': False, 'showConns': True, 'figSize': (12,12), 'view': 'xz', 'fontSize':8} 
 
 #------------------------------------------------------------------------------
-# Recording 
+# Current inputs 
 #------------------------------------------------------------------------------
-cfg.cellsrec = 2
-printNumber = 5
-if cfg.cellsrec == 0:  cfg.recordCells = cfg.allpops # record all cells
-elif cfg.cellsrec == 1: cfg.recordCells = [(pop,0) for pop in cfg.allpops] # record one cell of each pop
-elif cfg.cellsrec == 2: # record 'printNumber' cells of each pop
-    cfg.recordCells = []
-    for cellNumberLabel in range(0,cfg.cellNumber, int(cfg.cellNumber/printNumber)):
-        cfg.recordCells.append((cfg.allpops[0],cellNumberLabel))
+cfg.addIClamp = 1
 
-cfg.recordTraces = {'Vsoma': {'sec': 'soma','loc': 0.5,'var': 'v'}}
-cfg.recordStim = True  # record spikes of cell stims		
-cfg.recordTime = False  	
-cfg.recordStep = 0.1 # Step size in ms to save data (eg. V traces, LFP, etc)
+delaystim = 0
+durationstim = 2000
+cfg.I0 = 0.18
+
+cfg.IClamp0 =   {'pop': cfg.allpops[0], 'sec': 'soma', 'loc': 0.5, 'start': delaystim, 'dur': durationstim, 'amp': cfg.I0}    
 
 #------------------------------------------------------------------------------
-# Saving
+# Record Data 
 #------------------------------------------------------------------------------
+
+cfg.recordCells = cfg.allpops  # which cells to record from
+cfg.recordTraces = {'V_soma': {'sec':'soma_0', 'loc':0.5, 'var':'v'}}  ## Dict with traces to record
+cfg.recordStim = True
+cfg.recordTime = True
+cfg.recordStep = 0.1            
+
 cfg.simLabel = 'v0_batch0'
 cfg.saveFolder = '../data/'+cfg.simLabel
 # cfg.filename =                	## Set file output name
 cfg.savePickle = False         	## Save pkl file
-cfg.saveJson = True	           	## Save json file
-cfg.saveDataInclude = ['simData'] ## 'simData' , 'simConfig', 'netParams'
+cfg.saveJson = True           	## Save json file
+cfg.saveDataInclude = ['simConfig', 'netParams', 'simData'] ## 
 cfg.backupCfgFile = None 		##  
 cfg.gatherOnlySimData = False	##  
-cfg.saveCellSecs = False			
-cfg.saveCellConns = True	
-
-#------------------------------------------------------------------------------
-# Analysis and plotting 
-#------------------------------------------------------------------------------
-# cfg.analysis['plotRaster'] = {'saveData': 'raster_data.json', 'saveFig': True, 'showFig': True} # Plot raster
-# cfg.analysis['plotTraces'] = {'include': [2], 'saveFig': True, 'showFig': True} # Plot cell traces
-# cfg.analysis['plot2Dnet'] = {'saveFig': True, 'showFig': True} # Plot 2D cells and connections
-
-
-# cfg.analysis['plotTraces'] = {'include': cfg.recordCells, 'timeRange': [0,cfg.duration], 'overlay': True, 'oneFigPer': 'trace', 'figSize': (10,4), 'saveFig': True, 'showFig': False} 
+cfg.saveCellSecs = False			##  
+cfg.saveCellConns = True		##
 
 
 #------------------------------------------------------------------------------
-# Analysis and plotting 
+# Net
 #------------------------------------------------------------------------------
-cfg.analysis['plotRaster'] = {'include': cfg.allpops, 'saveFig': True, 'showFig': False, 'orderInverse': True, 
-							'timeRange': [0,cfg.duration], 'figSize': (18,10), 'labels': 'legend', 'popRates': True, 'fontSize':9, 'lw': 2, 'markerSize':4, 'marker': '.', 'dpi': 300} 
-cfg.analysis['plotTraces'] = {'include': cfg.recordCells, 'timeRange': [0,cfg.duration], 'oneFigPer': 'trace', 'overlay': False, 'ylim': [-100,40], 'saveFig': True, 'showFig': False, 'figSize':(18,10)}
-#------------------------------------------------------------------------------
-# Network 
-#------------------------------------------------------------------------------
-cfg.scale = 1.0 
-cfg.sizeY = 100.0
-cfg.sizeX = 100.0 # radius in um
-cfg.sizeZ = 100.0
-
-#------------------------------------------------------------------------------
-# Connectivity
-#------------------------------------------------------------------------------
-cfg.addConn = 1
-cfg.EEGain = 0.0
-cfg.wgkbar = 0.0002
-#------------------------------------------------------------------------------
-# Current inputs 
-#------------------------------------------------------------------------------
-cfg.IClamp1 = 0.001 # amp  in uA or nA ?
+cfg.cellNumber = 24
+cfg.gex = 0.005
