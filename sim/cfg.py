@@ -28,7 +28,7 @@ rootFolder = os.getcwd()
 # Run parameters
 #------------------------------------------------------------------------------
 
-cfg.duration = 2000.0 ## Duration of the sim, in ms  
+cfg.duration = 5000.0 ## Duration of the sim, in ms  
 cfg.dt = 0.01
 # ~ cfg.seeds = {'conn': 4321, 'stim': 1234, 'loc': 4321} 
 cfg.hParams = {'celsius': 34, 'v_init': -65}  
@@ -54,7 +54,7 @@ for cell in cfg.allcells:
 # Analysis and plotting 
 #------------------------------------------------------------------------------
 cfg.analysis['plotTraces'] = {'include': cfg.allpops, 'saveFig': True, 'showFig': False, 'oneFigPer':'trace', 'axis': False, 'subtitles':False, 'legend':False, 'overlay':False, 'figSize':(36, 24), 'fontSize':2}
-cfg.analysis['plot2Dnet']   = {'include': cfg.allpops, 'saveFig': True, 'showFig': False, 'showConns': True, 'figSize': (12,12), 'view': 'xz', 'fontSize':8} 
+# cfg.analysis['plot2Dnet']   = {'include': cfg.allpops, 'saveFig': True, 'showFig': False, 'showConns': True, 'figSize': (12,12), 'view': 'xz', 'fontSize':8} 
 
 #------------------------------------------------------------------------------
 # Current inputs 
@@ -62,10 +62,9 @@ cfg.analysis['plot2Dnet']   = {'include': cfg.allpops, 'saveFig': True, 'showFig
 cfg.addIClamp = 1
 
 delaystim = 0
-durationstim = 2000
-cfg.I0 = 0.18
+durationstim = 5000
 
-cfg.IClamp0 =   {'pop': cfg.allpops[0], 'sec': 'soma', 'loc': 0.5, 'start': delaystim, 'dur': durationstim, 'amp': cfg.I0}    
+cfg.IClamp0 =   {'pop': cfg.allpops[0], 'sec': 'soma', 'loc': 0.5, 'start': delaystim, 'dur': durationstim, 'amp': 0.18}    
 
 #------------------------------------------------------------------------------
 # Record Data 
@@ -81,7 +80,7 @@ cfg.simLabel = 'v0_batch0'
 cfg.saveFolder = '../data/'+cfg.simLabel
 # cfg.filename =                	## Set file output name
 cfg.savePickle = False         	## Save pkl file
-cfg.saveJson = True           	## Save json file
+cfg.saveJson = False           	## Save json file
 cfg.saveDataInclude = ['simConfig', 'netParams', 'simData'] ## 
 cfg.backupCfgFile = None 		##  
 cfg.gatherOnlySimData = False	##  
@@ -92,5 +91,5 @@ cfg.saveCellConns = True		##
 #------------------------------------------------------------------------------
 # Net
 #------------------------------------------------------------------------------
-cfg.cellNumber = 24
+cfg.cellNumber = 48
 cfg.gex = 0.005

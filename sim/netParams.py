@@ -89,25 +89,18 @@ if cfg.addIClamp:
 #------------------------------------------------------------------------------
 # Synaptic mechanism parameters
 #------------------------------------------------------------------------------
-#  Conrado: This synaptic mechanism is being used because of the NetPyNE Package Reference.
-# http://www.netpyne.org/reference.html#synaptic-mechanisms-parameters
-#   synaptic mechanism parameters for a simple excitatory synaptic mechanism labeled NMDA,
-#   implemented using the Exp2Syn model, with rise time (tau1) of 0.1 ms, decay time (tau2)
-#   of 5 ms, and equilibrium potential (e) of 0 mV
-netParams.synMechParams['NMDA'] = {
-    'mod': 'Exp2Syn',
-    'tau1': 0.1,
-    'tau2': 5.0,
-    'e': 0
-    }
 
+# netParams.synMechParams['NMDA'] = {'mod': 'Exp2Syn', 'tau1': 15.0, 'tau2': 150.0, 'e': 0.0}
+netParams.synMechParams['AMPA'] = {'mod': 'Exp2Syn', 'tau1': 0.1, 'tau2': 5.0, 'e': 0.0}
+#ESynMech    = ['AMPA', 'NMDA']
 #------------------------------------------------------------------------------
 # Connectivity rules
 #------------------------------------------------------------------------------
-netParams.connParams['all'] = {
-        'preConds': {'pop': cfg.allpops},
-        'postConds': {'pop': cfg.allpops},
-        'synMech': ['NMDA'],
-        'weight':cfg.gex, 
-        'probability': 0.1 #'0.1*exp(-1/probLengthConst)',
-}
+
+netParams.connParams['EE'] = { 
+    'preConds': {'pop': cfg.allpops}, 
+    'postConds': {'pop': cfg.allpops},
+    'synMech': 'AMPA', # ESynMech,
+    'probability': 0.1, 
+    'weight': cfg.gex, # 'delay': 'defaultDelay+dist_3D/propVelocity', 'synsPerConn': int(synperconnNumber[pre][post]+0.5)
+    }    

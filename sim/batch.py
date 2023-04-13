@@ -16,8 +16,8 @@ def custom():
     params = specs.ODict()
     
     # params[('seeds', 'conn')] =  [1] 
-    params[('gex')] = [0.00]
-    params[('I0')] = [0.18] 
+    params[('gex')] = [0.001, 0.002, 0.003]
+    params[('IClamp0', 'amp')] = [0.1, 0.2] 
 
     b = Batch(params=params, netParamsFile='netParams.py', cfgFile='cfg.py')
 
@@ -34,9 +34,14 @@ def setRunCfg(b, type='mpi_bulletin'):
 
     elif type=='mpi_direct':
         b.runCfg = {'type': 'mpi_direct',
-            'cores': 6,
+            'cores': 2,
             'script': 'init.py',
             'mpiCommand': 'mpiexec', # i7  --use-hwthread-cpus
+            'skip': True}
+
+    elif type=='mpi_direct2':
+        b.runCfg = {'type': 'mpi_direct',
+            'mpiCommand': 'mpirun -n 12 ./x86_64/special -mpi -python init.py', # --use-hwthread-cpus
             'skip': True}
 
     elif type=='hpc_slurm_gcp':
