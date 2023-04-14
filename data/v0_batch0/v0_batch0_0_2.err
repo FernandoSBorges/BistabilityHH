@@ -1,0 +1,6 @@
+NEURON -- VERSION 8.2.2 HEAD (93d41fafd) 2022-12-15
+Duke, Yale, and the BlueBrain Project -- Copyright 1984-2022
+See http://neuron.yale.edu/neuron/credits
+
+Additional mechanisms from files
+ "mod//cadecay_destexhe.mod" "mod//HH_traub.mod" "mod//IL_gutnick.mod" "mod//IM_cortex.mod" "mod//IT_huguenard.mod"
