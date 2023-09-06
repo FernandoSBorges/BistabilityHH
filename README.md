@@ -39,7 +39,7 @@ You can see the individual version of each package in the [requirements.txt](req
 how to use
 
 ### One Cell 
-how to use
+First, in the "simulations_one_cell" folder, run "nrnivmodl" in the terminal.
 
 ### Network Neurons 
 how to use
