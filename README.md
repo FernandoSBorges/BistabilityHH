@@ -7,6 +7,8 @@
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
 - [How to Use](#how-to-use)
+  - [One Cell](#one-cell)
+  - [Network Neurons](#network-neurons)
 - [Acknowledgments](#acknowledgments)
 - [Contributors](#contributors)
 <!-- - [Contributing](#contributing) -->
