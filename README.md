@@ -25,6 +25,7 @@ After creating the environment, packages can be installed in the standard way fr
 
 You can see the individual version of each package in the [requirements.txt](requirements.txt) file.
 
+Some results are shown via [Jupyter Notebook](https://jupyter.org/install), so it's important to have it installed.
 
 ### Installation
 
@@ -36,10 +37,16 @@ You can see the individual version of each package in the [requirements.txt](req
 
 
 ## How to Use
-how to use
+First, in the “simulations_one_cell” or “simulations_network” folder, run “nrnivmodl” in the terminal to compile the NEURON files. This must only be done once.
 
-### One Cell 
-First, in the "simulations_one_cell" folder, run "nrnivmodl" in the terminal.
+### One Cell:
+
+Open the model's Jupyter notebook
+> [*Model of regular spiking neuron, with $I_N$ a and $I_K$ for spike generation, and slow $K^+$ current ($I_M$) for spike-frequency adaptation*](simulations_one_cell/NetPyNe_OneCell.ipynb), 
+
+select the kernel with the virtual environment where the python packages were installed and run all the notebook cells.
+
+
 
 ### Network Neurons 
 how to use
