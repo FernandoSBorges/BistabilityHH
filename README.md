@@ -34,7 +34,12 @@ You can see the individual version of each package in the [requirements.txt](req
 
 
 ## How to Use
+how to use
 
+### One Cell 
+how to use
+
+### Network Neurons 
 how to use
 
 ## Acknowledgments
