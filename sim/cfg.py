@@ -55,6 +55,7 @@ for cell in cfg.allcells:
 #------------------------------------------------------------------------------
 cfg.analysis['plotTraces'] = {'include': cfg.allpops, 'saveFig': True, 'showFig': False, 'oneFigPer':'trace', 'axis': False, 'subtitles':False, 'legend':False, 'overlay':False, 'figSize':(36, 24), 'fontSize':2}
 # cfg.analysis['plot2Dnet']   = {'include': cfg.allpops, 'saveFig': True, 'showFig': False, 'showConns': True, 'figSize': (12,12), 'view': 'xz', 'fontSize':8} 
+cfg.analysis['plotRaster'] = {'include': cfg.allpops, 'saveFig': True, 'showFig': False, 'popRates': False, 'orderInverse': True, 'timeRange': [0,cfg.duration],'figSize': (24,12), 'lw': 0.3, 'markerSize':10, 'marker': '.', 'dpi': 300}
 
 #------------------------------------------------------------------------------
 # Current inputs 
@@ -64,7 +65,14 @@ cfg.addIClamp = 1
 delaystim = 0
 durationstim = 5000
 
-cfg.IClamp0 =   {'pop': cfg.allpops[0], 'sec': 'soma', 'loc': 0.5, 'start': delaystim, 'dur': durationstim, 'amp': 0.18}    
+cfg.IClamp0 =   {
+    'pop': cfg.allpops[0],
+    'sec': 'soma',
+    'loc': 0.5,
+    'start': delaystim,
+    'dur': durationstim,
+    'amp': 0.0174
+    }    
 
 #------------------------------------------------------------------------------
 # Record Data 
@@ -76,10 +84,10 @@ cfg.recordStim = True
 cfg.recordTime = True
 cfg.recordStep = 0.1            
 
-cfg.simLabel = 'v0_batch0'
+cfg.simLabel = 'v0_batch1'
 cfg.saveFolder = '../data/'+cfg.simLabel
 # cfg.filename =                	## Set file output name
-cfg.savePickle = False         	## Save pkl file
+cfg.savePickle = True         	## Save pkl file
 cfg.saveJson = False           	## Save json file
 cfg.saveDataInclude = ['simConfig', 'netParams', 'simData'] ## 
 cfg.backupCfgFile = None 		##  
@@ -91,5 +99,5 @@ cfg.saveCellConns = True		##
 #------------------------------------------------------------------------------
 # Net
 #------------------------------------------------------------------------------
-cfg.cellNumber = 200
-cfg.gex = 0.005
+cfg.cellNumber = 100
+cfg.gex = 0.0001

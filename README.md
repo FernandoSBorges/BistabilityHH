@@ -45,16 +45,3 @@ Open the model's Jupyter notebook
 > [Model of regular spiking neuron with slow Potassium Current for spike-frequency adaptation](simulations_one_cell/NetPyNe_OneCell.ipynb), 
 
 select the kernel with the virtual environment where the python packages were installed and run all the notebook cells. This is the result shown in Figure 1(A).
-
-
-### Network Neurons 
-how to use
-
-## Acknowledgments
-
-Acknowledgments
-
-## Contributors
-
-* [Fernando S. Borges](https://github.com/FernandoSBorges/)
-* [Conrado F. Bittencourt](https://github.com/ConradBitt/)
