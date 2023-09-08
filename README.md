@@ -45,23 +45,3 @@ Open the model's Jupyter notebook
 > [Model of regular spiking neuron with slow Potassium Current for spike-frequency adaptation](simulations_one_cell/NetPyNe_OneCell.ipynb), 
 
 select the kernel with the virtual environment where the python packages were installed and run all the notebook cells. This is the result shown in Figure 1(A).
-
-### Network Neurons 
-
-To simulate neuron networks it is recommended to configure the simulation parameters in the [cfg.py](simulations_network/cfg.py) file and the network parameters in the [netParams.py](simulations_network/netParams.py) file. To run the simulation, use the `python3 init.py` command.
-
-The results are stored in the location defined in the simulation configuration file ([cfg.py](simulations_network/cfg.py)), by default it is in the [data/v0_batch1](data/v0_batch1/) folder.  In this folder there will be a [pickle file](data/v0_batch1/v0_batch1_data.pkl) that stores a dictionary with all the simulation information, in addition to the figures produced.
-
-* [Raster Plot](data/v0_batch1/v0_batch1_PlotRaster_0.00022_0.174.png)
-* [Network](data/v0_batch1/v0_batch1_plot_2Dnet.png)
-* [Traces](data/v0_batch1/v0_batch1_traces.png)
-
-
-## Acknowledgments
-
-Acknowledgments
-
-## Contributors
-
-* [Fernando S. Borges](https://github.com/FernandoSBorges/)
-* [Conrado F. Bittencourt](https://github.com/ConradBitt/)
