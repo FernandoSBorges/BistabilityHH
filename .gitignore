@@ -138,4 +138,6 @@ auth.json
 .vscode
 
 sim/x86_64
+simulations_one_cell/x86_64
+simulations_network/x86_64
 *.btr
