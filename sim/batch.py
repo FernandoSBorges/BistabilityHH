@@ -17,7 +17,7 @@ def custom():
     
     # params[('seeds', 'conn')] =  [1] 
     params[('gex')] = [0.0005, 0.0010, 0.0015, 0.0020]
-    params[('IClamp0', 'amp')] = [0.08, 0.10, 0.12] 
+    params[('IClamp0', 'amp')] = [0.08, 0.10, 0.12, 0.14] 
 
     b = Batch(params=params, netParamsFile='netParams.py', cfgFile='cfg.py')
 
@@ -32,38 +32,14 @@ def setRunCfg(b, type='mpi_bulletin'):
             'script': 'init.py', 
             'skip': True}
 
-    elif type=='mpi_direct':
-        b.runCfg = {'type': 'mpi_direct',
-            'cores': 2,
-            'script': 'init.py',
-            'mpiCommand': 'mpiexec', # i7  --use-hwthread-cpus
-            'skip': True}
-
-    elif type=='mpi_direct2':
-        b.runCfg = {'type': 'mpi_direct',
-            'mpiCommand': 'mpirun -n 12 ./x86_64/special -mpi -python init.py', # --use-hwthread-cpus
-            'skip': True}
-
-    elif type=='hpc_slurm_gcp':
-        b.runCfg = {'type': 'hpc_slurm',
-            'allocation': 'default',
-            'walltime': '24:00:00',
-            'nodes': 1,
-            'coresPerNode': 80,
-            'email': 'fernandodasilvaborges@gmail.com',
-            'folder': '/home/ext_fernandodasilvaborges_gmail_/S1_mouse/sim/',
-            'script': 'init.py',
-            'mpiCommand': 'mpirun',
-            'skipCustom': '_raster.png'}
-
 # ----------------------------------------------------------------------------------------------
 # Main code
 # ----------------------------------------------------------------------------------------------
 if __name__ == '__main__': 
     b = custom() #
 
-    b.batchLabel = 'v0_batch0'  
+    b.batchLabel = 'v1000_batch1'  
     b.saveFolder = '../data/'+b.batchLabel
     b.method = 'grid'
-    setRunCfg(b, 'mpi_direct')     # setRunCfg(b, 'mpi_bulletin')
+    setRunCfg(b, 'mpi_bulletin')     # setRunCfg(b, 'mpi_bulletin')
     b.run() # run batch
