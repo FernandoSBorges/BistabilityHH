@@ -14,7 +14,7 @@
 <!-- - [Contributing](#contributing) -->
 
 ## Introduction
-This repository contains the codes, routines and notebooks used in the work *"The Role of Potassium and Calcium Currents in the Bistable Firing Transition"*. 
+This repository contains the codes, routines and notebooks used in the work *"The Role of Potassium and Calcium Currents in the Bistable Firing Transition"*. Brain Sci. 2023, 13(9), 1347; [doi.org/10.3390/brainsci13091347](https://doi.org/10.3390/brainsci13091347)
 
 ## Getting Started
 ### Prerequisites
